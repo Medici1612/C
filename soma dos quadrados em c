@@ -1,0 +1,33 @@
+
+#include <stdio.h>
+#include <locale.h>
+//exercicio dos quadrados
+void somadosquadrados(int *a,int *b,int *c,int *soma){
+ 
+*a = *a * *a;
+ 
+*b = *b * *b;
+ 
+*c = *c * *c;
+ 
+*soma = *a + *b + *c;
+}
+int main() {
+ 
+setlocale(LC_ALL, """");
+ 
+int x, y, z, soma;
+ 
+printf("Digite 3 números: ");
+ 
+scanf("%d%d%d",&x,&y,&z);
+ 
+ 
+somadosquadrados(&x,&y,&z,&soma);
+ 
+ 
+printf("Quadrados: %d,%d,%d\nSoma dos quadrados:%d",x,y,z,soma);
+ 
+ 
+return 0;
+}

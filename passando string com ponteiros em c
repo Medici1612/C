@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <locale.h>
+void RecebeString(char *palavra){
+	for(; *palavra !=0;palavra++){
+		printf("%c", *palavra);
+		printf(" ");
+	}
+}
+int main(){
+	setlocale(LC_ALL, """");
+	RecebeString("Feriado");
+	
+	return 0;
+}

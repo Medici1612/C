@@ -1,0 +1,37 @@
+
+#include <stdio.h>
+#include <locale.h>
+//exercicio reajuste
+void calculoDoReajuste(float *valor, float percentualR, float *valordeReajuste) {
+ 
+*valordeReajuste = *valor * (percentualR / 100); 
+ 
+*valor = *valor + *valordeReajuste; 
+}
+int main() {
+ 
+setlocale(LC_ALL, """");
+ 
+float preco, percentual, valorReajuste;
+ 
+ 
+printf("Digite o preço atual do produto: ");
+ 
+scanf("%f", &preco);
+ 
+ 
+printf("Digite o percentual de reajuste: ");
+ 
+scanf("%f", &percentual);
+ 
+ 
+calculoDoReajuste(&preco, percentual, &valorReajuste);
+ 
+ 
+printf("Valor do reajuste: %.2f\n", valorReajuste);
+ 
+printf("Preço reajustado: %.2f\n", preco);
+ 
+ 
+return 0;
+}

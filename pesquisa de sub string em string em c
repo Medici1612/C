@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+
+void fun_substring(char *str, char *subStr) {
+    
+	
+	// Procura a sub-string dentro da string
+	//strstr função para pesquisar string da biblioteca string.h
+    char *resultado = strstr(str, subStr);
+
+    // Verifica se a sub-string foi encontrada
+    if (resultado != NULL) {
+        printf("Sub-string encontrada: %s\n", resultado);
+        printf("Sub-string encontrada na posicao: %ld\n", resultado - str);
+    } else {
+        printf("Sub-string não encontrada.\n");
+    }
+}
+
+int main() {
+    char minhaString[] = "O feriado e Essa semana teremos feriado.";
+    char minhaSubString[] = "feriado";
+
+    fun_substring(minhaString, minhaSubString);
+
+    return 0;
+}

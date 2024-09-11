@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+// Função que substitui todas as ocorrências de um caractere por outro em uma string
+void subs(char *str, char antigo, char novo) {
+    while (*str != '\0') {  // Percorre a string até o final
+        if (*str == antigo) {
+            *str = novo;    // Substitui o caractere
+        }
+        str++;              // Avança para o próximo caractere
+    }
+}
+
+int main() {
+	
+    char texto[50], Antigo, Novo;
+	printf("\nEscreva seu texto:");
+	gets(texto);
+    printf("Texto original: %s\n", texto);
+    printf("\nInforme o caracter que deseja substituir: ");
+    scanf("%c", &Antigo);
+    printf("\nInforme o caracter que deseja inserir: ");
+    scanf("%c", &Novo);
+
+    // Chama a função para substituir o caractere 'a' por 'o'
+    subs(texto, Antigo, Novo);
+
+    printf("Texto após substituição: %s\n", texto);
+
+    return 0;
+}

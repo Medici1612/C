@@ -1,0 +1,109 @@
+-----alocação dinâmica de memória-----
+4 funções na stdlib.h para alocação:
+
+1-malloc: aloca o numero especificado de bytes.
+2-calloc: aloca o numero especificado de bytes e os inicializa para zero.
+3-realloc: aumenta/diminui o tamanho do bloco de memória especificado, movendo-o se necessário.
+4-free: libera o bloco especificado de memória.
+
+*Operador "sizeof" auxilia nas funções; //serve para descobrir o tamanho de cada variável.
+
+***Todo malloc deverá ter um free no final***
+---Malloc---
+-Para alocar 1000 bytes de memória:
+char *p;
+p = (char *) malloc(1000);
+
+-Para alocar espaço para 50 inteiros:
+int *p;
+p = (int*) malloc(50*sizeof(int)); //cada int são 4 bytes, 50 espaços são 200 bytes.
+
+exemplo de alocação para vetor com malloc e ponteiro:
+==================================================================
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
+
+int main(){
+	setlocale(LC_ALL, "");
+int *p,i;
+p = (int *) malloc (5* sizeof(int));
+if(p == NULL){
+	printf("Erro, memória insuficiente");
+	exit(1);
+}
+for(i=0; i<5; i++){
+	printf("Digite um numero para a posicao %i\n", i+1);
+	scanf("%i", &p[i]);
+}
+for( i=0; i<5; i++){
+	printf("O valor na posicao %i é %i\n", i+1, p[i]);
+}
+free(p);
+	return 0;
+}
+==================================================================
+
+
+
+Exercício 1:
+==================================================================
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int main(){
+	setlocale(LC_ALL, "");
+	int i, x;
+	float *p;
+	
+	printf("Qual será a quantia de componentes?");
+	scanf("%d", &x);
+	
+	p=(float *) malloc(x * sizeof(float));
+	
+	for(i=0;i<x;i++){
+		printf("Preço do componente %d:", i);
+		scanf("%f", &p[i]);
+	}
+	
+	for(i=0;i<x;i++){
+		printf("Componente %i: R$%.2f\n", i+1, p[i]);
+	}
+	free(p);
+	return 0;
+}
+==================================================================
+
+
+
+Exercicio 2:
+==================================================================
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+char* alocarString(int tam){
+	char *str;
+	str=(char*) calloc((tam+1), sizeof(char));
+return str;
+}
+
+
+int main(){
+	setlocale(LC_ALL, "");
+	int tam;
+	char *string;
+	
+	printf("Digite o tamanho da string:\n");
+	scanf("%d", &tam);
+	
+	string=alocarString(tam);
+		printf("Qual o conteudo da string?");
+		scanf("%s", string);
+		
+		printf("A string é: %s", string);
+		
+	return 0;
+}
+==================================================================

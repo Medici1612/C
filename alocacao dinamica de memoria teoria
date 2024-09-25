@@ -107,3 +107,43 @@ int main(){
 	return 0;
 }
 ==================================================================
+
+---Realloc---
+*Serve para realocar a memória e alterar a quantidade desejada.
+Ex: Para alterar o tamanho de um vetor de ponteiro.
+
+*Quando for realocar, se faltar memória após a realocação, a realocação não acontece e o ponteiro é devolvido ao valor anterior.
+
+---Alocação de Arrays---
+*Usar ponteiro para ponteiro;
+*Para cada nível de array, um nível de ponteiro e vice versa;
+ex:
+==================================================================
+int main(){
+int **p;
+int i, j, N=2;
+p = (int **) malloc(N*sizeof(int*));
+
+for(i=0;i<N;i++){
+p[i] = (int *)malloc(N*sizeof(int));
+ }
+}
+==================================================================
+*Nesse exemplo, o primeiro malloc cria as linhas da matriz, por meio de um ponteiro para ponteiro(**p), e o segundo cria as colunas.
+
+---Alocação de Struct---
+*Um ponteiro para struct recebera o malloc();
+*Usamos um operador seta;
+*Usamos free() para liberar a memória alocada;
+ex:
+==================================================================
+struct cad{
+int matricula;
+int idade;
+};
+
+int main(){
+int i;
+struct cad *vcad = (struct cad *)malloc(10 * sizeof(struct cad));
+==================================================================
+

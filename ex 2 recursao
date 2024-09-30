@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int cont(int n, int aux){
+	if(n<1){
+		return aux;
+	}
+	else{
+		return cont(n/10, aux+1);
+	
+	}
+}
+
+int main(){
+	setlocale(LC_ALL, "");
+	int n, aux, a;
+	
+	printf("Digite um numero:");
+	scanf("%d", &n);
+	
+	a=cont(n, aux);
+	printf("%d", a);
+	return 0;
+}

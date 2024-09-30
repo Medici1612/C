@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+
+int conversao(int num){
+	if(num==0){
+		return 0;
+	} 
+	else{
+		conversao(num/2);
+		printf("%d", num%2);
+	}
+}
+
+
+int main(){
+	setlocale(LC_ALL, "");
+	int num, result;
+	
+	printf("Digite um número:");
+	scanf("%d", &num);
+	
+	 conversao(num);
+	
+	return 0;
+} 

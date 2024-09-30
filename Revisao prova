@@ -1,0 +1,30 @@
+=============================================================================================================================================================
+Recursão- Consiste na divisão de um problema em problema em problemas menores, chamando a própria função repetidamente, até atingir a condição marcada.
+Problemas que a recursão resolve: 
+-Fatoriais
+-Potenciação
+-Fibonnacci
+-Somatória
+=============================================================================================================================================================
+Ponteiros- É uma variável que contém um endereço de memória.
+Vantagens ponteiros:
+-Eficiência
+-Alocação de memória
+-Manipulação de strings
+-Passagem por parâmetro
+
+Desvantagens:
+-Complexidade
+-Pode causar problemas se mal utilizado
+
+*Operadores de ponteiros
+    - & → operador unário que devolve o endereço na memória do seu operando;
+    - * → operador unário que devolve o valor da variável localizada no endereço apontado;
+
+Manipulação de Array:
+#########################################################
+int array[5] = {10, 20, 30, 40, 50};
+int *ponteiro = array;
+ponteiro++;  // move para o próximo elemento do array
+#########################################################
+=============================================================================================================================================================

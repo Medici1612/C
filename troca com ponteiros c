@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void troca(int *i, int *j){
+int temp;
+temp = *i;
+*i = *j;
+*j = temp;
+}
+
+int main(){
+	int a, b;
+	
+	printf("Digite um valor para a e b:\n");
+	scanf("%d%d", &a, &b);
+	
+		printf("A e b valem: %d e %d\n", a, b);
+		troca(&a, &b);
+		printf("A e b agora valem: %d e %d\n", a, b);
+	
+	return 0;
+}

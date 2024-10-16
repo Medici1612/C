@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+struct usuario{
+	
+	
+	char nome[100];
+	char email[100];
+	char cidade[100];
+};
+
+int main(){
+	
+	FILE *p;
+	
+	p = fopen("teste.txt","a");
+	
+	printf("Quantos usuarios deseja cadastrar?");
+	int n;
+	scanf("%d",&n);
+	
+	struct usuario users;
+	int i;
+	for(i=0;i<n;i++){
+		printf("\nNome:");
+		scanf(" %s",users.nome);
+		fflush(stdin); 
+		printf("\nemail:");
+		scanf(" %s",users.email);
+		fflush(stdin); 
+		printf("\ncidade:");
+		scanf(" %s",users.cidade);
+		fflush(stdin); 
+		fprintf(p,"\n");
+		fprintf(p,users.nome);
+		fprintf(p," , ");
+		fprintf(p,users.email);
+		fprintf(p," , ");
+		fprintf(p,users.cidade);
+		fprintf(p," , ");
+	}
+	
+	fclose(p);
+	
+	return 0;	
+	
+}
